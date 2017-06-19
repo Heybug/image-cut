@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CH">
+<head>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,user-scalable=no"/>
+    <meta charset="UTF-8">
+    <title>image-cut</title>
+    <style>
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<input type="file">
+<button id="cut">cut</button>
+
+<script src="../js/image-cut.js"></script>
+<script>
+    // http://mobile.uzise.com/assets/mob/20170618/1.jpeg
+    var cut = new Cut({
+        imgUrl: 'http://mobile.uzise.com/assets/mob/20170618/1.jpeg',
+    });
+</script>
+</body>
+</html>
