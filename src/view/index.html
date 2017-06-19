@@ -11,15 +11,35 @@
     </style>
 </head>
 <body>
-
-<input type="file">
-<button id="cut">cut</button>
-
+<div id="vm">
+    <input type="file">
+    <button id="cut">cut</button>
+    <button v-on:click="funSetImg(0)">img1</button>
+    <button v-on:click="funSetImg(1)">img2</button>
+</div>
+<script src="http://dev.crm.com:8081/assets/js/vue.min.js"></script>
 <script src="../js/image-cut.js"></script>
 <script>
     // http://mobile.uzise.com/assets/mob/20170618/1.jpeg
     var cut = new Cut({
         imgUrl: 'http://mobile.uzise.com/assets/mob/20170618/1.jpeg',
+    });
+
+    new Vue({
+        el: "#vm",
+        data: {
+            img: [
+                'http://mobile.uzise.com/assets/mob/20170618/1.jpeg',
+                'http://mobile.uzise.com/assets/mob/20170618/page1.jpg'
+            ]
+        },
+        created: function () {
+        },
+        methods: {
+            funSetImg: function (index) {
+                cut.createImg(this.img[index])
+            }
+        }
     });
 </script>
 </body>

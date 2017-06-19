@@ -13,6 +13,8 @@ function Cut(obj) {
 
 // 用于显示用的图片
 Cut.prototype.img = new Image();
+// 裁剪后的图片
+
 
 // 创建一张图片
 Cut.prototype.createImg = function (imgUrlStr) {
